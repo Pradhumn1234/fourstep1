@@ -28,7 +28,7 @@ const testimonialSchema = new mongoose.Schema({
 });
 
 const Testimonialmodel =
-  mongoose.models.Testimonial ||
-  mongoose.model("Testimonial", testimonialSchema);
+  mongoose.models.Testimonialmodel ||
+  mongoose.model("Testimonialmodel", testimonialSchema);
 
 export default Testimonialmodel;
