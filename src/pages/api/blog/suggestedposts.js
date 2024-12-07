@@ -1,5 +1,5 @@
-import BlogDetail from "@/models/blog/BlogDetail";
-import Package from "@/models/Package";
+
+import BlogDetail from "@/models/admin/blog copy/BlogDetail";
  const packagePublicSuggestedPackage= async (req, res) => {
     // console.log("req parasmdkjnkdjnkerbfhesbfs ejhbfehjbsd     ehfdbhejbfe  ejhrhf",req.params)
     try {
