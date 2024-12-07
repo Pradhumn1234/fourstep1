@@ -26,24 +26,14 @@
 import { MongoClient } from 'mongodb';
 
 export default async function handler(req, res) {
-  if (req.method === 'POST') {
+
     try {
       // MongoDB connection (replace with your connection string)
-      const client = await MongoClient.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-      const db = client.db('myDatabase');
-      const collection = db.collection('industries');
-      
-      // Example: Insert new industry (adjust according to your logic)
-      const result = await collection.insertOne(req.body);
-      
-      client.close();
-      res.status(200).json({ message: 'Industry added successfully', result });
+      await MongoClient.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }); 
     } catch (error) {
       console.error('Error inserting industry:', error);
       res.status(500).json({ message: 'Failed to add industry', error: error.message });
     }
-  } else {
-    res.status(405).json({ message: 'Method Not Allowed' });
-  }
+ 
 }
 
