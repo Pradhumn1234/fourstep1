@@ -7,4 +7,5 @@ const ToolSoftwareSchema = new mongoose.Schema({
   },
 });
 
-export default mongoose.models.Tools || mongoose.model("Tools", ToolSoftwareSchema);
+const Tools= mongoose.models.Tools || mongoose.model("Tools", ToolSoftwareSchema);
+export default Tools

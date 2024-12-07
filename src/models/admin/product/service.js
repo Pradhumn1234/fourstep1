@@ -4,5 +4,7 @@ const productserviceSchema = new mongoose.Schema({
   name: { type: String, required: true },
 });
 
-export default mongoose.models.productService ||
+
+const productService= mongoose.models.productService ||
   mongoose.model("productService", productserviceSchema);
+  export default productService;

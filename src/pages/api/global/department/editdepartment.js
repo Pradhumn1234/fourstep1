@@ -1,6 +1,7 @@
 // src/pages/api/admin/webinar/departments/editdepartment.js
+import webinardepartment from "@/models/admin/webinar/departments";
 import dbConnect from "@/utils/db";
-import webinardepartment from "@/models/admin/webinar/Departments";
+
 export default async function handler(req, res) {
   await dbConnect();
 

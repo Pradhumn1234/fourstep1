@@ -5,5 +5,6 @@ const departmentSchema = new mongoose.Schema({
   name: { type: String, required: true },
 });
 
-export default mongoose.models?.webinardepartment ||
+const webinardepartment= mongoose.models?.webinardepartment ||
  mongoose.model("webinardepartment", departmentSchema);
+ export default webinardepartment
