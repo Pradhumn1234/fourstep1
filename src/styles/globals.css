@@ -1,0 +1,753 @@
+/* src/styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+/* Additional global styles */
+/* 
+body {
+  font-family: "Poppins", sans-serif;
+} */
+
+/* styles/globals.css */
+
+body {
+  font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/*  for carousel over flow  */
+.container {
+  overflow: hidden;
+}
+
+/*  for testimonial slider start */
+.slick-dots li button:before {
+  color: white;
+  font-size: 10px;
+  border: 1px;
+  padding: 0.8px;
+  background-color: rgb(193, 193, 193);
+  border-radius: 100%;
+}
+
+.slick-dots li button:before:hover {
+  color: #000;
+}
+
+.slick-dots li.slick-active button:before {
+  color: red;
+}
+
+/* animations of our clients start */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInFromLeft 1s ease-in-out forwards;
+}
+
+.animate-slide-in-from-right {
+  animation: slideInFromRight 1s ease-in-out forwards;
+}
+
+/* animations of our clients end */
+
+/* Team skills bar animation start */
+@keyframes slideInBlueZoho {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 92%;
+  }
+}
+
+@keyframes slideInOrangeZoho {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 8%;
+  }
+}
+
+.animate-width-blue-zoho {
+  animation: slideInBlueZoho 1.5s ease-in-out forwards;
+}
+
+.animate-width-orange-zoho {
+  animation: slideInOrangeZoho 1.5s ease-in-out forwards;
+}
+
+@keyframes slideInBlueWeb {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 90%;
+  }
+}
+
+@keyframes slideInOrangeWeb {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 10%;
+  }
+}
+
+.animate-width-blue-web {
+  animation: slideInBlueWeb 1.5s ease-in-out forwards;
+}
+
+.animate-width-orange-web {
+  animation: slideInOrangeWeb 1.5s ease-in-out forwards;
+}
+
+@keyframes slideInBlueHub {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 85%;
+  }
+}
+
+@keyframes slideInOrangeHub {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 15%;
+  }
+}
+
+.animate-width-blue-hub {
+  animation: slideInBlueHub 1.5s ease-in-out forwards;
+}
+
+.animate-width-orange-hub {
+  animation: slideInOrangeHub 1.5s ease-in-out forwards;
+}
+
+/* Team skills bar animation end */
+
+/* carousel project page  component */
+.carousel-container {
+  position: relative;
+}
+.pagination {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.pagination-item {
+  padding: 2px 8px;
+  border: 1px solid rgb(203, 213, 225, var(--tw-border-opacity));
+  border-radius: 5px;
+  background-color: #FFFBF5;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+.pagination-item {
+  list-style: none;
+  /* Removes bullets/numbers */
+}
+.pagination-item:hover {
+  background-color: rgb(211, 211, 211);
+}
+
+.pagination-item.active {
+  background-color: black;
+  color: white;
+}
+
+
+.carousel {
+  display: flex;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+.carousel-item {
+  flex: none;
+
+  /* Adjust the height as needed */
+  scroll-snap-align: start;
+  /* Add margin between items if needed */
+}
+
+/* for service page ___css */
+
+.text-gradient {
+  background: linear-gradient(90deg, #6bb8ff, #ff896b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #4f46e5, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Add this to your global CSS or a relevant stylesheet */
+@keyframes pop-up {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.card {
+  animation: pop-up 0.3s ease-out;
+}
+
+/* trail version */
+@layer utilities {
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .translate-z-25 {
+    transform: translateZ(25px);
+  }
+
+  .translate-z-26 {
+    transform: translateZ(26px);
+  }
+
+  .translate-z-40 {
+    transform: translateZ(40px);
+  }
+
+  .translate-z-50 {
+    transform: translateZ(50px);
+  }
+
+  .translate-z-60 {
+    transform: translateZ(60px);
+  }
+
+  .translate-z-80 {
+    transform: translateZ(80px);
+  }
+
+  .translate-z-100 {
+    transform: translateZ(100px);
+  }
+
+  .translate-z-120 {
+    transform: translateZ(120px);
+  }
+
+  .hover-rotate-card:hover .card {
+    transform: rotate3d(1, 1, 0, 30deg);
+    box-shadow: rgba(5, 71, 17, 0.3) 30px 50px 25px -40px,
+      rgba(5, 71, 17, 0.1) 0px 25px 30px 0px;
+  }
+
+  .hover-translate-social:hover .social-button:nth-child(1) {
+    transform: translateZ(50px);
+    box-shadow: rgba(5, 71, 17, 0.2) -5px 20px 10px 0px;
+    transition: transform 0.2s ease-in-out 0.4s,
+      box-shadow 0.2s ease-in-out 0.4s;
+  }
+
+  .hover-translate-social:hover .social-button:nth-child(2) {
+    transform: translateZ(50px);
+    box-shadow: rgba(5, 71, 17, 0.2) -5px 20px 10px 0px;
+    transition: transform 0.2s ease-in-out 0.6s,
+      box-shadow 0.2s ease-in-out 0.6s;
+  }
+
+  .hover-translate-social:hover .social-button:nth-child(3) {
+    transform: translateZ(50px);
+    box-shadow: rgba(5, 71, 17, 0.2) -5px 20px 10px 0px;
+    transition: transform 0.2s ease-in-out 0.8s,
+      box-shadow 0.2s ease-in-out 0.8s;
+  }
+
+  .hover-translate-logo:hover .circle2 {
+    transform: translateZ(60px);
+  }
+
+  .hover-translate-logo:hover .circle3 {
+    transform: translateZ(80px);
+  }
+
+  .hover-translate-logo:hover .circle4 {
+    transform: translateZ(100px);
+  }
+
+  .hover-translate-logo:hover .circle5 {
+    transform: translateZ(120px);
+  }
+
+  .backdrop-blur-5 {
+    backdrop-filter: blur(5px);
+  }
+
+  .backdrop-blur-1 {
+    backdrop-filter: blur(1px);
+  }
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-none {
+  display: block;
+}
+
+/* carousel section start */
+/* carousel component */
+.carousel-container {
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+.carousel-item {
+  flex: none;
+
+  /* Adjust the height as needed */
+  scroll-snap-align: start;
+  /* Add margin between items if needed */
+}
+
+.container-wrapper {
+  margin: auto;
+  min-width: 300px;
+}
+
+@media screen and (max-width: 639px) {
+  .container-wrapper {
+    width: calc(100% - 35px) !important;
+    /* padding: 0 20px; */
+    /* background-color: red !important; */
+    /* padding:0 540px !important; */
+  }
+
+  .vignette-relative {
+    /* background: radial-gradient(circle, transparent, rgb(5, 1, 53)); */
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .container-wrapper {
+    width: 600px !important;
+    /* background-color: red !important; */
+    /* padding:0 540px !important; */
+  }
+
+  .vignette-relative {
+    /* background: radial-gradient(circle, transparent, rgb(5, 1, 53)); */
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container-wrapper {
+    width: 750px !important;
+    /* background-color: red !important; */
+    /* padding:0 540px !important; */
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .container-wrapper {
+    width: 950px !important;
+    /* background-color: green !important; */
+    /* padding:0 20px !important; */
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container-wrapper {
+    width: 1130px !important;
+    /* background-color: blue !important; */
+    /* padding:0 20px !important; */
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .container-wrapper {
+    width: 1330px !important;
+    /* background-color: blue !important; */
+    /* padding:0 20px !important; */
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .container-wrapper {
+    width: 1280px !important;
+    /* background-color: blue !important; */
+    /* padding:0 20px !important; */
+  }
+}
+
+/* carousel section end*/
+
+/* for about page css */
+.custom-first-line::first-line {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.font {
+  color: #ea580c;
+  font-size: 11px;
+}
+
+/* here is counter section start */
+
+.count {
+  font-size: 35px;
+}
+
+/* header section */
+
+a:hover span {
+  transform: scaleX(1);
+}
+
+/* hero section carousel start */
+.arrow-circle {
+  background-color: rgb(228, 228, 228);
+  border: none;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.left-arrow {
+  left: 10px;
+  /* Adjust as needed */
+}
+
+.right-arrow {
+  right: 10px;
+  /* Adjust as needed */
+}
+
+.arrow-circle:hover {
+  color: #0b3d91;
+}
+
+/* Hide arrows on mobile devices (screen width below 768px) */
+@media only screen and (max-width: 768px) {
+  .arrow-circle {
+    display: none;
+  }
+}
+
+/* navicon icons for fabars and the  */
+
+.navicon {
+  font-size: 20px;
+}
+
+.AddIcon {
+  font-size: 50px;
+}
+
+/* for the zoom  out zoom in effect */
+/* styles/globals.css */
+
+@keyframes continuous {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.hover-zoom {
+  /* Initial state of the image without animation */
+  transition: transform 0.3s ease;
+  /* Smooth transition */
+}
+
+.hover-zoom:hover {
+  animation: continuous 0.6s ease-in-out infinite;
+  /* Start animation on hover */
+}
+
+/*  for scroll bar */
+/* Custom scrollbar styles */
+.scrollbar-thick::-webkit-scrollbar {
+  width: 10px;
+  /* Width of the scrollbar */
+}
+
+.scrollbar-thick::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Background of the scrollbar track */
+}
+
+.scrollbar-thick::-webkit-scrollbar-thumb {
+  background-color: #888;
+  /* Color of the scrollbar thumb */
+  border-radius: 10px;
+  /* Rounded corners */
+}
+
+/* mobile header navbavrs animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.menu-open {
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+.menu-close {
+  animation: slideOut 2s ease-in-out backwards;
+}
+
+/* navbar hover sliders */
+
+.slide span::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 4px;
+
+  width: 0;
+  height: 2px;
+  transition: width 220ms ease-in;
+}
+
+.slide span:hover::after {
+  background-color: rgb(249 115 22);
+
+  width: 100%;
+}
+
+/* end */
+
+/*  footer li hover effect */
+
+.footerHover {
+  position: relative;
+  /* Ensure the ::after element is positioned correctly */
+}
+
+.footerHover a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  /* Adjust bottom position as needed */
+  width: 0;
+  height: 2px;
+  background-color: #f36b21;
+
+  /* Color of the line */
+  transition: width 220ms ease-in;
+}
+
+.footerHover a:hover::after {
+  width: 100%;
+  /* Full widthon hover */
+}
+
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  /* Adjust size as needed */
+  height: 20px;
+  /* Adjust size as needed */
+  border-radius: 50%;
+  border: 1px solid #f36b21;
+  /* Change color as needed */
+  margin-right: 4px;
+  /* Space between icon and text */
+  border-radius: 100%;
+  color: #f36b21;
+}
+
+/* here is backtotop animation */
+
+.backtotopanimate {
+  animation: zoomanimate 1s ease infinite;
+}
+
+@keyframes zoomanimate {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn_filter {
+  @apply bg-white border border-black rounded-md md:py-2 py-1 md:px-4 px-2 md:text-lg text-base cursor-pointer transition-transform transform hover:scale-105 hover:bg-gray-200;
+}
+
+/*  specially for ul li becaause of this is not working properllyy start */
+ol {
+  list-style-type: decimal;
+  /* Ensures ordered lists show numbers */
+}
+
+ul {
+  list-style-type: disc;
+  /* Ensures unordered lists show bullets */
+}
+
+/* end */
+/* rich-text-content ul*/
+.rich-text-content ul,
+.rich-text-content ol {
+  padding-left: 25px;
+  /* Indent the list from the left */
+  margin-top: 5px;
+  /* Add space above lists */
+}
+
+.rich-text-content ul li,
+.rich-text-content ol li {
+  margin-bottom: 1px;
+}
+
+@media (max-width: 768px) {
+  .rich-text-content ul,
+  .rich-text-content ol {
+    padding-left: 15px; /* Reduce padding for smaller screens */
+    margin-top: 3px; /* Adjust spacing above lists */
+  }
+
+   .rich-text-content p{
+    font-size: 14px;
+  }
+
+  .rich-text-content ul li,
+  .rich-text-content ol li {
+    margin-bottom: 2px;
+    font-size: 14px;
+    /* Slightly increase spacing for better readability */
+  }
+}
