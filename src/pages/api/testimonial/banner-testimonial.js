@@ -1,7 +1,8 @@
 import dbConnect from "@/utils/db"; // Ensure this is correctly importing your db connection
 import multer from "multer";
 import fs from "fs";
-import TestimonialBanner from "@/models/admin/Testimonial/TestimonialBanner"; // Import the model
+import TestimonialBanner from "@/models/admin/Testimonial/testimonialbanner";
+// Import the model
 // Set up storage configuration for multer
 const uploadDirectory = "./public/uploads/Testimonialbanner";
 if (!fs.existsSync(uploadDirectory)) {
